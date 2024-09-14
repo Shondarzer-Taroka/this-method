@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this Method</title>
+    <script>
+
+     
+class Herican{
+    constructor(width,heigth){
+    this.width=width
+    this.heigth=heigth
+ }
+
+ hello(){
+    console.log('hello JavaScript')
+ }
+
+ test(){
+    console.log(this);
+ }
+
+   static create(jfile){
+      let person= JSON.parse(jfile)
+      return new Herican(person.name,person.age,person.email)
+   }
+    
+}
+
+    let jfile='{"name":"kamrul","age":"23","email":"nazmulnnhasan@gmail.com"}'
+
+    let p2=Herican.create(jfile)
+    console.log(p2);
+    console.log( p2 instanceof Herican)
+    p2.hello()
+     let koi=p2.test
+     koi()
+     
+
+
+
+    // function Shape() {
+    //     this.draw=function(){
+    //         console.log('this is a draw function')
+    //     }
+    // }
+
+    // let shapef1=new Shape()
+    // anotherShape=shapef1
+    // console.log(anotherShape.draw())
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
